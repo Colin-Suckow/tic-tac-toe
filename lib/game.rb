@@ -1,7 +1,7 @@
 require_relative "board"
 
 class Game
-  def initialize(board = nil)
+  def initialize(board = Board.new)
     @board = board
   end
 
@@ -10,6 +10,6 @@ class Game
   end
 
   def over?
-    false
+    @board.full?
   end
 end
