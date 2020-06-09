@@ -12,4 +12,8 @@ class Game
   def over?
     @board.full?
   end
+
+  def tie?
+    self.over?
+  end
 end
