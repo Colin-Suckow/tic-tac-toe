@@ -1,6 +1,21 @@
-require_relative '../lib/board'
+require_relative "../lib/board"
 
-describe 'A Tic Tac Toe board' do
+describe "A Tic Tac Toe board" do
+  let(:full_board) {
+    {
+      top: { left: :fake, middle: :fake, right: :fake },
+      middle: { left: :fake, middle: :fake, right: :fake },
+      bottom: { left: :fake, middle: :fake, right: :fake },
+    }
+  }
+
+  let(:midgame_board) {
+    {
+      top: { left: :o, middle: nil, right: nil },
+      middle: { left: nil, middle: :x, right: nil },
+      bottom: { left: nil, middle: nil, right: nil },
+    }
+  }
 
   it "exists" do
     Board.new
@@ -15,5 +30,4 @@ describe 'A Tic Tac Toe board' do
   it "is initially empty" do
     expect(Board.new).to be_empty
   end
-
 end
