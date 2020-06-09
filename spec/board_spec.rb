@@ -30,4 +30,9 @@ describe "A Tic Tac Toe board" do
   it "is initially empty" do
     expect(Board.new).to be_empty
   end
+
+  it "is full when all locations are filled" do
+    board = Board.new(full_board)
+    expect(board).to be_full
+  end
 end
