@@ -47,4 +47,10 @@ describe "A Tic Tac Toe board" do
     board.locations[:top][:left] = :x
     expect(board.token_at(:top, :left)).to eq(:x)
   end
+
+  it "can be reset" do
+    board = Board.new(full_board)
+    board.reset
+    expect(board.locations).to eq(Board.new.locations)
+  end
 end
