@@ -18,6 +18,11 @@ class Game
   end
 
   def winner
-    :x #If this isn't shameless green I don't know what is
+    if @board.token_at(:top, :left) == :x && @board.token_at(:top, :middle) == :x && @board.token_at(:top, :right) == :x
+      return :x
+    elsif @board.token_at(:top, :left) == :o && @board.token_at(:top, :middle) == :o && @board.token_at(:top, :right) == :o
+      return :o
+    end
+    nil
   end
 end
