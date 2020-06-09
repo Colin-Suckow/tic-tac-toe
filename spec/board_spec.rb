@@ -35,4 +35,16 @@ describe "A Tic Tac Toe board" do
     board = Board.new(full_board)
     expect(board).to be_full
   end
+
+  it "can place a token at a location" do
+    board = Board.new
+    board.place(:x, :top, :left)
+    expect(board.locations[:top][:left]).to eq(:x)
+  end
+
+  it "can retrieve the token at a location" do
+    board = Board.new
+    board.locations[:top][:left] = :x
+    expect(board.token_at(:top, :left)).to eq(:x)
+  end
 end
